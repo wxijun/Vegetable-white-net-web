@@ -1,13 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div>
+      <ul>
+        <li><router-link to="/login">登录</router-link></li>
+        <li><router-link to="/index">返回首页</router-link></li>
+      </ul>
+      <Login/>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Login from './components/login'
+import Index from './components/index'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Login,
+    Index
+  }
 }
 </script>
 

@@ -11,12 +11,12 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-		'/TheNextWebApp': {
-			//target: 'http://200.200.200.113:5000',
-			target: 'http://192.168.100.117:5000',
+		'/VegetableWhiteNet': {
+			target: 'http://200.200.200.113:5000',//以太网 IP
+			// target: 'http://192.168.100.117:5000',//WLAN IP
 			changeOrigin: true,
 			pathRewrite: {
-				'^/TheNextWebApp': '/TheNextWebApp'
+				'^/VegetableWhiteNet': '/VegetableWhiteNet'
 			}
 		}
 	},
