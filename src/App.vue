@@ -6,6 +6,7 @@
         <li><router-link to="/index">返回首页</router-link></li>
       </ul>
       <Login/>
+      <Index/>
     </div>
     <router-view></router-view>
   </div>
