@@ -52,16 +52,15 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           alert('submit!')
-          this.axios({
+          this.$api.post({
             methods: 'post',
             url: '/yanzheng'
           })
-            .then(function (response) { // 请求成功
-              console.log(response)
-            })
-            .catch(function (error) { // 请求失败
-              console.log(error)
-            })
+          // .then(function (response) { // 请求成功
+          //   console.log(response)
+          // }).catch(function (error) { // 请求失败
+          //   console.log(error)
+          // })
         } else {
           console.log('error submit!!')
           return false

@@ -1,14 +1,7 @@
 <template>
   <div id="app">
-    <div>
-      <ul>
-        <li><router-link to="/login">登录</router-link></li>
-        <li><router-link to="/index">返回首页</router-link></li>
-      </ul>
-      <Login/>
-      <Index/>
-    </div>
-    <router-view></router-view>
+    <Index/>
+    <router-view/>
   </div>
 </template>
 
@@ -23,7 +16,6 @@ export default {
   }
 }
 </script>
-
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

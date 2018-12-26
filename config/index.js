@@ -6,17 +6,16 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-		'/VegetableWhiteNet': {
-			target: 'http://200.200.200.113:5000',//以太网 IP
-			// target: 'http://192.168.100.117:5000',//WLAN IP
+		'/api/v1.0': {
+			target: 'http://200.200.200.113:5000', // 以太网 IP  --此处为API接口地址
+			// target: 'http://192.168.100.117:5000', // WLAN IP
 			changeOrigin: true,
 			pathRewrite: {
-				'^/VegetableWhiteNet': '/VegetableWhiteNet'
+				'^/api/v1.0': '' // 这里理解为用API代替target中的地址
 			}
 		}
 	},

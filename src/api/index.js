@@ -1,41 +1,34 @@
-import axios from 'axios';
+import axios from 'axios'
 
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'; 
-import qs from 'qs';
-
-let base = 'http://xxxx.xxxx.com.cn/hubei/doc';
-let base1 = 'http://xxxx.com';
-
-let token = '';
-
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 
 let http = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: 'http://200.200.200.113:5000/v1.0',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
   },
   transformRequest: [function (data) {
-    let newData = '';
+    let newData = ''
     for (let k in data) {
       if (data.hasOwnProperty(k) === true) {
-        newData += encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) + '&';
+        newData += encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) + '&'
       }
     }
-    return newData;
+    return newData
   }]
-});
+})
 
-function apiAxios(method, url, params, response) {
+function apiAxios (method, url, params, response) {
   http({
     method: method,
     url: url,
     data: method === 'POST' || method === 'PUT' ? params : null,
-    params: method === 'GET' || method === 'DELETE' ? params : null,
+    params: method === 'GET' || method === 'DELETE' ? params : null
   }).then(function (res) {
-    response(res);
+    response(res)
   }).catch(function (err) {
-    response(err);
+    response(err)
   })
 }
 

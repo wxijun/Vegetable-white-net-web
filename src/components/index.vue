@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     欢迎！<b @click="login">点击这里登录</b>
   </div>
 </template>
@@ -11,6 +11,11 @@ export default {
     return {
       msg: ''
     }
+  },
+  created () {
+    this.$api.get('/user/index', null, r => {
+      console.log(r)
+    })
   },
   methods: {
     login () {
